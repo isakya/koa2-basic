@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/01-快速入门.js"
+    "start": "nodemon src/02-中间件.js"
   },
   "author": "",
   "license": "ISC",
