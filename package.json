@@ -5,13 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/07-koa-router.js"
+    "start": "nodemon src/08-错误处理.js",
+    "prod": "cross-env NODE_ENV=production node src/08-错误处理.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cross-env": "^7.0.3",
     "koa": "^2.13.4",
     "koa-body": "^5.0.0",
+    "koa-json-error": "^3.1.2",
     "koa-router": "^10.1.1"
   },
   "devDependencies": {

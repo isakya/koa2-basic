@@ -45,9 +45,9 @@ router.get('/:id/article/:aid', (ctx) => {
   if (false) {
     ctx.body = { id: 1, title: '文章1', content: '文章1' }
   } else {
-    // ctx.throw(422, '参数不符合条件')
+    ctx.throw(422, '参数不符合条件')
     // 提交错误
-    return ctx.app.emit('error', { code: 404, message: '资源没有找到' }, ctx)
+    // return ctx.app.emit('error', { code: 404, message: '资源没有找到' }, ctx)
     // {},ctx 对应 (err, ctx) => {}
   }
 })
