@@ -17,6 +17,7 @@ app.use(userRoute.routes())
 // 状态码
 app.use(userRoute.allowedMethods())
 
+// 在所有中间件的后面监听 error事件(事件名随意)
 app.on('error', (err, ctx) => {
   console.error(err)
   ctx.body = err
