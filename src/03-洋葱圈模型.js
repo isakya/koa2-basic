@@ -1,5 +1,5 @@
 // 1. 导入 koa 包
-const Koa = require('Koa')
+const Koa = require('koa')
 // 2. 实例化 app 对象
 const app = new Koa()
 // 3. 编写中间件 中间件就是一个函数
