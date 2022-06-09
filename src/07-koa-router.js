@@ -17,6 +17,11 @@ app.use(userRoute.routes())
 // 状态码
 app.use(userRoute.allowedMethods())
 
+app.on('error', (err, ctx) => {
+  console.error(err)
+  ctx.body = err
+})
+
 // 5. 启动服务，监听3000端口
 app.listen(3000, () => {
   console.log(`server is running on http://localhost:3000`)

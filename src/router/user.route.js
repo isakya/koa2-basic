@@ -37,4 +37,17 @@ router.post('/', (ctx) => {
   ctx.body = ctx.request.body
 })
 
+// 接口：获取 id = 1 的用户编写的文章的信息 article = 1
+router.get('/:id/article/:aid', (ctx) => {
+  console.log(ctx.params)
+  // 没有通过ctx.body返回数据时，默认koa返回404错误
+  // a.b // 为了报运行时错误
+  if (false) {
+    ctx.body = { id: 1, title: '文章1', content: '文章1' }
+  } else {
+    // ctx.throw(422, '参数不符合条件')
+    return ctx.app.emit('error', { code: 404, message: '资源没有找到' }, ctx)
+  }
+})
+
 module.exports = router
