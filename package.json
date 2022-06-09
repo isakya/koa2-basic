@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/await.js"
+    "start": "nodemon src/05-koa处理异步数据.js"
   },
   "author": "",
   "license": "ISC",
