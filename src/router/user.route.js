@@ -13,10 +13,11 @@ const db = [
   { id: 5, name: 'zs', age: 40 },
 ]
 
-// GET /uers ---- 获取所有用户的信息，返回一个数组
+// GET /uers?start=18&&end=20 ---- 获取所有用户的信息，返回一个数组
 router.get('/', (ctx) => {
   // 通过 ctx.query 是 ctx.request.query 的代理 解析键值对参数
   const { start = 0, end = 0 } = ctx.query
+  if (start <= end) ctx.throw(422)
   const res = db.filter((item) => {
     return item.age >= start && item.age <= end
   })
@@ -32,7 +33,8 @@ router.get('/:id', (ctx) => {
   ctx.body = res[0]
 })
 router.post('/', (ctx) => {
-  ctx.body = '创建用户'
+  console.log(ctx.request.body)
+  ctx.body = ctx.request.body
 })
 
 module.exports = router

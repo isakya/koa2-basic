@@ -3,6 +3,11 @@ const Koa = require('koa')
 // 2. 实例化 app 对象
 const app = new Koa()
 
+// 解析body参数中间件
+// 注册KoaBody中间件，解析请求体中的参数，挂载到ctx.request.body
+const KoaBody = require('koa-body')
+app.use(KoaBody())
+
 // 3. 导入 router 路由
 const userRoute = require('./router/user.route')
 
